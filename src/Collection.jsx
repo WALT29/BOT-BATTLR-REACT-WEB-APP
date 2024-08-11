@@ -26,7 +26,7 @@ function Collection({bot,botArmy,setBotArmy,setBots,bots,setSortedBots,sortedBot
 
     function handleDelete(){
         //console.log(bot.id);
-        fetch(`https://my-json-server.typicode.com/WALT29/db.json/bots/${bot.id}`,{
+        fetch(`https://my-json-server.typicode.com/WALT29/BOT-BATTLR-REACT-WEB-APP/bots/${bot.id}`,{
             method:"DELETE"     
         })
         .then((response)=>{
