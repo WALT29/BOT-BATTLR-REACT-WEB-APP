@@ -10,7 +10,7 @@ function App() {
 
 
   useEffect(()=>{
-    fetch("http://localhost:3000/bots")
+    fetch("https://my-json-server.typicode.com/WALT29/db.json/bots")
     .then(response=>response.json())
     .then((data)=>{
       setBots(data)
