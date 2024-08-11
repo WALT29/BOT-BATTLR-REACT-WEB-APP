@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function Soldier ({soldier,setBotArmy,botArmy,setBots}) {
+export default function Soldier ({soldier,setBotArmy,botArmy,setBots,setSortedBots}) {
     console.log("soldier",soldier);
 
     const[showDetails,setShowDetails]=useState(false);
@@ -13,7 +13,18 @@ export default function Soldier ({soldier,setBotArmy,botArmy,setBots}) {
         console.log("released button clicked",soldier.id);
         const updatedArmy=botArmy.filter((bot)=>bot.id !==soldier.id)
         setBotArmy(updatedArmy);
-        setBots((prevBots) => [...prevBots, soldier]);    
+        setBots((prevBots) =>{
+            const originalIndexOfSoldier=prevBots.findIndex((bot)=>bot.id==soldier.id)
+            const newBots=[...prevBots];
+            newBots.splice(originalIndexOfSoldier,0,soldier)
+            return newBots
+        });
+        setSortedBots((prevBots)=>{
+            const originalIndexOfSoldier=prevBots.findIndex((bot)=>bot.id==soldier.id)
+            const newBots=[...prevBots];
+            newBots.splice(originalIndexOfSoldier,0,soldier)
+            return newBots
+        }) 
     }
 
 

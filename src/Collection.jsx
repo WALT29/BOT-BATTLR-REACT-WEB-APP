@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Details from "./details";
 
-function Collection({bot,botArmy,setBotArmy,setBots,bots}){
+function Collection({bot,botArmy,setBotArmy,setBots,bots,setSortedBots,sortedBots}){
     //console.log(bot);
 
     const[showDetails,setShowDetails]=useState(false)
@@ -16,6 +16,7 @@ function Collection({bot,botArmy,setBotArmy,setBots,bots}){
             setBotArmy([...botArmy,bot])
             console.log(botArmy);
             setBots(bots.filter((soldier)=>(soldier.id !==bot.id)))
+            setSortedBots(sortedBots.filter((soldier) => soldier.id !== bot.id));
         }else{
             alert("BOT ALREADY IN THE ARMY")
         }
@@ -31,6 +32,7 @@ function Collection({bot,botArmy,setBotArmy,setBots,bots}){
         .then((response)=>{
             if(response.ok){
                 setBots(bots.filter((soldier)=>soldier.id !==bot.id))
+                setSortedBots(bots.filter((soldier) => soldier.id !== bot.id)); 
             }
         })
         .catch((error)=>{

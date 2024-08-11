@@ -1,7 +1,7 @@
 import React from "react";
 import Soldier from "./soldier";
 
-function BotArmy({botArmy,setBotArmy,setBots}){
+function BotArmy({botArmy,setBotArmy,setBots,setSortedBots}){
     //console.log("y",botArmy);
     return(
         <>
@@ -9,7 +9,7 @@ function BotArmy({botArmy,setBotArmy,setBots}){
             <div className="collections">
                 {
                     botArmy.map((soldier)=>(
-                        <Soldier key={soldier.id} soldier={soldier} setBotArmy={setBotArmy} botArmy={botArmy} setBots={setBots}/>
+                        <Soldier key={soldier.id} soldier={soldier} setBotArmy={setBotArmy} botArmy={botArmy} setBots={setBots} setSortedBots={setSortedBots}/>
                     ))
                 }
             </div>

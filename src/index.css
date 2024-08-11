@@ -106,3 +106,24 @@ button{
 .release-button{
   margin: 10px;
 }
+
+.sort-container{
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  font-size: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sort-by{
+  color:#f30810;
+  font-weight: bold;
+}
+.select-box{
+  padding: 20px;
+  font-size: 20px;
+  background-color: #7a558a;
+  color:#fff;
+  border: none;
+  border-radius: 5px;
+}
